@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
-import './DegreeProjectsPage.css' // Import the CSS file
+import { useNavigate } from 'react-router-dom'
+import './DegreeProjectsPage.css'
 
 const DegreeProjectsPage = () => {
   const [projects, setProjects] = useState([])
+  const navigate = useNavigate()
 
   const fetchData = async () => {
     const mockData = [
       {
         id: 1,
         title: 'Project 1',
-        description: 'Description of Project 1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
       },
       { id: 2, title: 'Project 2', description: 'Description of Project 2' },
       { id: 3, title: 'Project 3', description: 'Description of Project 3' },
@@ -29,6 +31,10 @@ const DegreeProjectsPage = () => {
     })
   }, [])
 
+  const handleReadMore = (projectId) => {
+    navigate(`/project/${projectId}`)
+  }
+
   return (
     <div className='degreeProjectsDisplay'>
       <h1>Degree Projects</h1>
@@ -37,6 +43,12 @@ const DegreeProjectsPage = () => {
           <div key={project.id} className='projectCard'>
             <h2>{project.title}</h2>
             <p>{project.description}</p>
+            <button
+              onClick={() => handleReadMore(project.id)}
+              className='readMoreButton'
+            >
+              Read more
+            </button>
           </div>
         ))}
       </div>
