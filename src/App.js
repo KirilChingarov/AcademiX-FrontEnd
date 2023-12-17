@@ -3,6 +3,7 @@ import LoginPage from './pages/Login/LoginPage'
 import CreateDegreeProjectPage from './pages/CreateDegreeProject/CreateDegreeProjectPage'
 import EditDegreeProjectPage from './pages/EditDegreeProject/EditDegreeProjectPage'
 import DegreeProjectsPage from './pages/DisplayDegreeProjects/DegreeProjectsPage'
+import ViewDegreeProject from './pages/ViewDegreeProject/ViewDegreeProject'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             element={<EditDegreeProjectPage />}
           />
           <Route path='/projects' element={<DegreeProjectsPage />} />
+          <Route path='/project/:projectId' element={<ViewDegreeProject />} />
         </Routes>
       </BrowserRouter>
     </div>
