@@ -18,7 +18,7 @@ function App() {
             path='/edit-degree-project'
             element={<EditDegreeProjectPage />}
           />
-          <Route path='/degree-projects' element={<DegreeProjectsPage />} />
+          <Route path='/projects' element={<DegreeProjectsPage />} />
         </Routes>
       </BrowserRouter>
     </div>
