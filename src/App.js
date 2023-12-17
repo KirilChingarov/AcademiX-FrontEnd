@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './pages/Login/LoginPage'
 import CreateDegreeProjectPage from './pages/CreateDegreeProject/CreateDegreeProjectPage'
 import EditDegreeProjectPage from './pages/EditDegreeProject/EditDegreeProjectPage'
+import DegreeProjectsPage from './pages/DisplayDegreeProjects/DegreeProjectsPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             path='/edit-degree-project'
             element={<EditDegreeProjectPage />}
           />
+          <Route path='/degree-projects' element={<DegreeProjectsPage />} />
         </Routes>
       </BrowserRouter>
     </div>
