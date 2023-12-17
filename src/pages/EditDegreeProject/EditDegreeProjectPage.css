@@ -1,0 +1,41 @@
+.degreeProjectEditForm {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 20px;
+  }
+  
+  .degreeProjectEditForm h1 {
+    text-align: center;
+  }
+  
+  .degreeProjectEditForm form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .degreeProjectEditForm label {
+    margin-bottom: 8px;
+  }
+  
+  .degreeProjectEditForm input,
+  .degreeProjectEditForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .degreeProjectEditForm .updateButton {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745; /* Different color for update button */
+    color: white;
+  }
+  
+  .degreeProjectEditForm .updateButton:hover {
+    background-color: #218838;
+  }

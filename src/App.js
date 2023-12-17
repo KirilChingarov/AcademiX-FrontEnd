@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './pages/Login/LoginPage'
 import CreateDegreeProjectPage from './pages/CreateDegreeProject/CreateDegreeProjectPage'
+import EditDegreeProjectPage from './pages/EditDegreeProject/EditDegreeProjectPage'
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
           <Route
             path='/create-degree-project'
             element={<CreateDegreeProjectPage />}
+          />
+          <Route
+            path='/edit-degree-project'
+            element={<EditDegreeProjectPage />}
           />
         </Routes>
       </BrowserRouter>
