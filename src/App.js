@@ -4,12 +4,14 @@ import CreateDegreeProjectPage from './pages/CreateDegreeProject/CreateDegreePro
 import EditDegreeProjectPage from './pages/EditDegreeProject/EditDegreeProjectPage'
 import DegreeProjectsPage from './pages/DisplayDegreeProjects/DegreeProjectsPage'
 import ViewDegreeProject from './pages/ViewDegreeProject/ViewDegreeProject'
+import HomePage from './pages/Home/HomePage'
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route
             path='/create-degree-project'
