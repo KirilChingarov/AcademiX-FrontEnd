@@ -1,6 +1,21 @@
 import { useState, useEffect } from 'react'
 import './EditDegreeProjectPage.css'
 
+const ConfirmationPopup = ({ onConfirm, onCancel, message }) => {
+  return (
+    <div className='confirmationOverlay'>
+      <div className='confirmationPopup'>
+        <p className='message'>{message}</p>
+        <div className='actionsContainer'>
+          <button className='confirmButton' onClick={onConfirm}>Confirm</button>
+          <button className='cancelButton' onClick={onCancel}>Cancel</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 const EditDegreeProjectPage = ({ existingData }) => {
   const [degreeTitle, setDegreeTitle] = useState('')
   const [degreeDescription, setDegreeDescription] = useState('')
@@ -26,6 +41,21 @@ const EditDegreeProjectPage = ({ existingData }) => {
     console.log('Updated Degree Title:', degreeTitle)
     console.log('Updated Degree Description:', degreeDescription)
   }
+
+  const onDeleteButtonPressed = () => {
+    setShowConfirmation(true)
+  }
+
+  const confirmDegreeProjectDeletion = () => {
+    console.log("Degree Project Deleted")
+    setShowConfirmation(false)
+  }
+
+  const cancelDegreeProjectDeletion = () => {
+    setShowConfirmation(false)
+  }
+
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   return (
     <div className='degreeProjectEditForm'>
@@ -53,6 +83,15 @@ const EditDegreeProjectPage = ({ existingData }) => {
         <button type='submit' className='updateButton'>
           Update Degree Project
         </button>
+        <button onClick={onDeleteButtonPressed} className='deleteButton'>
+          Delete Degree Project
+        </button>
+        {showConfirmation && 
+        (<ConfirmationPopup
+          onConfirm={confirmDegreeProjectDeletion}
+          onCancel={cancelDegreeProjectDeletion}
+          message="Are you sure you want to delete the current degree project?"
+        />)}
       </form>
     </div>
   )
