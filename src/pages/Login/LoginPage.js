@@ -47,12 +47,14 @@ const LoginPage = () => {
   }
 
   return (
-    <div className={'mainContainer'}>
-      <div className={'titleContainer'}>
-        <div>AcademiX Login</div>
-      </div>
-      <br />
-      <div className={'inputContainer'}>
+    <div id={'mainContainer'} >
+      <div className={'wrapperContainer'}>
+        <div id='img-container'>
+        </div>
+
+        <div className={'loginFormWrapper'}>
+        <div className={'titleContainer'}>AcademiX Login</div>
+        <div className={'inputContainer'}>
         <input
           value={email}
           placeholder='Enter your email'
@@ -60,9 +62,8 @@ const LoginPage = () => {
           className={'inputBox'}
         />
         <label className='errorLabel'>{emailError}</label>
-      </div>
-      <br />
-      <div className={'inputContainer'}>
+        </div>
+        <div className={'inputContainer'}>
         <input
           value={password}
           placeholder='Enter your password'
@@ -70,15 +71,16 @@ const LoginPage = () => {
           className={'inputBox'}
         />
         <label className='errorLabel'>{passwordError}</label>
-      </div>
-      <br />
-      <div className={'inputContainer'}>
+        </div>
+        <div className={'buttonContainer'}>
         <input
-          className={'inputButton'}
+          id={'inputButton'}
           type='button'
           onClick={handleSubmit}
           value={'Log in'}
         />
+        </div>
+        </div>
       </div>
     </div>
   )
