@@ -14,7 +14,7 @@ const ViewReviewer = () => {
     <div className='viewReviewer'>
       <h1>View Project Details</h1>
       <div className='details'>
-        <h1>{reviewer.firstName} {reviewer.lastName}</h1>
+        <h1>{reviewer.user.firstName} {reviewer.user.lastName}</h1>
         <p>Email: {reviewer.email}</p>
         <p>Cabinet: {reviewer.cabinet}</p>
         <p>Working Time:  {reviewer.workingTime}</p>

@@ -29,7 +29,7 @@ const ReviewersPage = () => {
       <div className='itemGrid'>
         {reviewers.map((reviewer) => (
           <div key={reviewer.id} className='itemCard'>
-            <h2>{reviewer.firstName} {reviewer.lastName}</h2>
+            <h2>{reviewer.user.firstName} {reviewer.user.lastName}</h2>
             <br/>
             <button
               onClick={() => handleInfoButtonClick(reviewer)}
