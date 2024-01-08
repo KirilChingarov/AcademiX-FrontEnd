@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './LoginPage.css'
+import './RegisterPage.css'
 import { validEmail } from '../../utils/regex.js'
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [repeatPassword, setRepeatPassword] = useState('')
   const [emailError, setEmailError] = useState('')
   const [passwordError, setPasswordError] = useState('')
 
@@ -18,6 +19,11 @@ const LoginPage = () => {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value)
+    setPasswordError('')
+  }
+
+  const handleRepeatPasswordChange = (e) => {
+    setRepeatPassword(e.target.value)
     setPasswordError('')
   }
 
@@ -40,8 +46,18 @@ const LoginPage = () => {
       return
     }
 
+    if ('' === repeatPassword) {
+        setPasswordError('Please repeat your password')
+        return
+      }
+
     if (password.length < 7) {
       setPasswordError('The password must be 8 characters or longer')
+      return
+    }
+
+    if(password != repeatPassword) {
+        setPasswordError('The password must match')
       return
     }
   }
@@ -51,9 +67,8 @@ const LoginPage = () => {
       <div className={'wrapperContainer'}>
         <div id='img-container'>
         </div>
-
-        <div className={'loginFormWrapper'}>
-        <div className={'titleContainer'}>AcademiX Login</div>
+        <div className={'registerFormWrapper'}>
+        <div className={'titleContainer'}>AcademiX Register</div>
         <div className={'inputContainer'}>
         <input
           value={email}
@@ -70,6 +85,15 @@ const LoginPage = () => {
           onChange={(event) => handlePasswordChange(event)}
           className={'inputBox'}
         />
+        <label className='errorLabel'>{emailError}</label>
+        </div>
+        <div className={'inputContainer'}>
+        <input
+          value={repeatPassword}
+          placeholder='Enter your password again'
+          onChange={(event) => handleRepeatPasswordChange(event)}
+          className={'inputBox'}
+        />
         <label className='errorLabel'>{passwordError}</label>
         </div>
         <div className={'buttonContainer'}>
@@ -77,7 +101,7 @@ const LoginPage = () => {
           id={'inputButton'}
           type='button'
           onClick={handleSubmit}
-          value={'Log in'}
+          value={'Register'}
         />
         </div>
         </div>
@@ -86,4 +110,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default RegisterPage

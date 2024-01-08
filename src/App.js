@@ -5,6 +5,7 @@ import EditDegreeProjectPage from './pages/EditDegreeProject/EditDegreeProjectPa
 import DegreeProjectsPage from './pages/DisplayDegreeProjects/DegreeProjectsPage'
 import ViewDegreeProject from './pages/ViewDegreeProject/ViewDegreeProject'
 import HomePage from './pages/Home/HomePage'
+import RegisterPage from './pages/Register/RegisterPage'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
+          <Route path='register' element={<RegisterPage/>} />
           <Route
             path='/create-degree-project'
             element={<CreateDegreeProjectPage />}

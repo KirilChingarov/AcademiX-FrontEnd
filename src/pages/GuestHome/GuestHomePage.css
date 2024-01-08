@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     text-align: center;
-    background: url('../../../public/background.png');
+    background: url('../../../public/background-login.jpg');
     background-size: cover;
   }
   
@@ -25,5 +25,26 @@
     font-size: 1.5rem;
     color: #024d63;
     margin-bottom: 1rem;
+  }
+
+  #login-btn {
+    background-color: #104a87;
+    margin-top: 1rem; 
+    padding: 0.7rem 4rem;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    border-color: #104a87;
+  }
+
+  #register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #register-btn{
+    margin-left: 8px;
+    color: #104a87;
   }
   
