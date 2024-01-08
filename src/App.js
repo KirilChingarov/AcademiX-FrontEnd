@@ -7,6 +7,7 @@ import ViewDegreeProject from './pages/ViewDegreeProject/ViewDegreeProject'
 import HomePage from './pages/Home/HomePage'
 import RegisterPage from './pages/Register/RegisterPage'
 import DegreeSupervisorsPage from './pages/DisplayDegreeSupervisors/DegreeSupervisorsPage'
+import ViewDegreeSupervisor from './pages/ViewDegreeSupervisor/ViewDegreeSupervisor'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/projects' element={<DegreeProjectsPage />} />
           <Route path='/project/:projectId' element={<ViewDegreeProject />} />
           <Route path='/degree-supervisors' element={<DegreeSupervisorsPage />} />
+          <Route path='/degree-supervisor/:degreeSupervisorId' element={<ViewDegreeSupervisor/>} />
         </Routes>
       </BrowserRouter>
     </div>

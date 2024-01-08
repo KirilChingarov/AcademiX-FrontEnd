@@ -12,8 +12,11 @@ const DegreeSupervisorsPage = () => {
     const mockData = [
       {
         id: 1,
-        firstName: 'Degree',
-        lastName: 'Supervisor',
+        firstName: 'Ivan',
+        lastName: 'Ivanov',
+        email: 'ivan.ivanov@mail.com',
+        cabinet: 2345,
+        workingTime: '10:00 - 17:00',
         specialties: [
             {
                 id: 0,
@@ -27,8 +30,11 @@ const DegreeSupervisorsPage = () => {
       },
       {
         id: 2,
-        firstName: 'Degree',
-        lastName: 'Supervisor',
+        firstName: 'Boris',
+        lastName: 'Slavov',
+        email: 'boris.slavov@mail.com',
+        cabinet: 1551,
+        workingTime: '9:00 - 15:00',
         specialties: [
             {
                 id: 0,
@@ -42,8 +48,11 @@ const DegreeSupervisorsPage = () => {
       },
       {
         id: 3,
-        firstName: 'Degree',
-        lastName: 'Supervisor',
+        firstName: 'Petar',
+        lastName: 'Trendafilov',
+        email: 'petar.trandafilov@mail.com',
+        cabinet: 12601,
+        workingTime: '11:00 - 18:00',
         specialties: [
             {
                 id: 0,
@@ -71,8 +80,8 @@ const DegreeSupervisorsPage = () => {
   }, [])
 
 
-  const handleInfoButtonClick = (project) => {
-    //navigate(`/project/${project.id}`, { state: { project } })
+  const handleInfoButtonClick = (degreeSupervisor) => {
+    navigate(`/degree-supervisor/${degreeSupervisor.id}`, { state: { degreeSupervisor } })
   }
 
   return (
