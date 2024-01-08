@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getSpecialtyRender } from '../../utils/Specialties'
 import './DegreeSupervisorsPage.css'
 import '../../utils/Specialties.css'
 
@@ -51,6 +52,10 @@ const DegreeSupervisorsPage = () => {
             {
                 id: 1,
                 name: 'Java'
+            },
+            {
+                id: 2,
+                name: 'Ruby'
             }
         ]
       }
@@ -65,20 +70,8 @@ const DegreeSupervisorsPage = () => {
     })
   }, [])
 
-  const getSpecialtyRender = (specialtyId, specialtyName) => {
-    switch(specialtyId){
-        case 0:
-            return <p key={specialtyId} className='react'>{specialtyName}</p>;
-        case 1:
-            return <p key={specialtyId} className='java'>{specialtyName}</p>;
-        case 2:
-            return <p key={specialtyId} className='ruby'>{specialtyName}</p>;
-        default:
-            return <p></p>;
-    }
-  }
 
-  const handleReadMore = (project) => {
+  const handleInfoButtonClick = (project) => {
     //navigate(`/project/${project.id}`, { state: { project } })
   }
 
@@ -96,10 +89,10 @@ const DegreeSupervisorsPage = () => {
             </div>
             <br/>
             <button
-              onClick={() => handleReadMore(degreeSupervisor)}
+              onClick={() => handleInfoButtonClick(degreeSupervisor)}
               className='readMoreButton'
             >
-              Read more
+              View Supervisor
             </button>
           </div>
         ))}
