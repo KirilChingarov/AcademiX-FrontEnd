@@ -8,6 +8,8 @@ import HomePage from './pages/Home/HomePage'
 import RegisterPage from './pages/Register/RegisterPage'
 import DegreeSupervisorsPage from './pages/DisplayDegreeSupervisors/DegreeSupervisorsPage'
 import ViewDegreeSupervisor from './pages/ViewDegreeSupervisor/ViewDegreeSupervisor'
+import ReviewersPage from './pages/DisplayReviewers/ReviewersPage'
+import ViewReviewer from './pages/ViewReviewer/ViewReviewer'
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path='/project/:projectId' element={<ViewDegreeProject />} />
           <Route path='/degree-supervisors' element={<DegreeSupervisorsPage />} />
           <Route path='/degree-supervisor/:degreeSupervisorId' element={<ViewDegreeSupervisor/>} />
+          <Route path='/reviewers' element={<ReviewersPage/>} />
+          <Route path='/reviewers/:reviewerId' element={<ViewReviewer/>}/>
         </Routes>
       </BrowserRouter>
     </div>
