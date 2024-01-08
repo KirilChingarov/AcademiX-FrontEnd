@@ -7,38 +7,13 @@ const ReviewersPage = () => {
   const navigate = useNavigate()
 
   const fetchData = async () => {
-    const mockData = [
-      {
-        id: 1,
-        firstName: 'Lubomir',
-        lastName: 'Petrov',
-        email: 'ivan.ivanov@mail.com',
-        cabinet: 2345,
-        workingTime: '10:00 - 17:00'
-      },
-      {
-        id: 2,
-        firstName: 'Boyan',
-        lastName: 'Dqnkov',
-        email: 'boris.slavov@mail.com',
-        cabinet: 1551,
-        workingTime: '9:00 - 15:00'
-      },
-      {
-        id: 3,
-        firstName: 'Teodor',
-        lastName: 'Simeonov',
-        email: 'petar.trandafilov@mail.com',
-        cabinet: 12601,
-        workingTime: '11:00 - 18:00'
-      }
-    ]
-
-    return mockData
+    const response = fetch('/api/reviewers')
+    return (await response).json();
   }
 
   useEffect(() => {
     fetchData().then((data) => {
+        console.log(data);
         setReviewers(data)
     })
   }, [])
