@@ -19,20 +19,20 @@ const ReviewersPage = () => {
   }, [])
 
 
-  const handleInfoButtonClick = (reviewer) => {
-    navigate(`/reviewers/${reviewer.id}`, { state: { reviewer } })
+  const handleInfoButtonClick = (reviewerId) => {
+    navigate(`/reviewers/${reviewerId}`, { state: { reviewerId } })
   }
 
   return (
     <div className='reviewersDisplay'>
-      <h1>Degree Supervisors</h1>
+      <h1>Degree Reviewers</h1>
       <div className='itemGrid'>
         {reviewers.map((reviewer) => (
           <div key={reviewer.id} className='itemCard'>
             <h2>{reviewer.user.firstName} {reviewer.user.lastName}</h2>
             <br/>
             <button
-              onClick={() => handleInfoButtonClick(reviewer)}
+              onClick={() => handleInfoButtonClick(reviewer.id)}
               className='readMoreButton'
             >
               View Reviewer
